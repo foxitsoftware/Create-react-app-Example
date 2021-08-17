@@ -6,7 +6,7 @@ This guide shows two examples. One introduces how to quickly run the out-of-the-
 
 _Note:The root folder of `Foxit PDF SDK for Web` is referred as `root` in the following._
 
-Foxit PDF SDK for Web provides a boilerplate project for React app which was created by "create-react-app". This example can be found at `root/integrations/` inside Foxit PDF SDK for Web package.
+Foxit PDF SDK for Web provides a boilerplate project for React app which was created by "create-react-app".
 
 ### Overview the project structure
 
@@ -16,8 +16,6 @@ Foxit PDF SDK for Web provides a boilerplate project for React app which was cre
 ├─src/
 │  ├─components/
 │  │  └─PDFViewer/
-│  ├─foxit-lib/
-│  │    ├─...
 │  ├─App.css
 │  ├─App.js
 │  ├─index.css
@@ -48,16 +46,21 @@ Foxit PDF SDK for Web provides a boilerplate project for React app which was cre
 
 ### Getting started
 
-- Copy `root/examples/license-key.js` to the `root/integratons/create-react-app/src`.
+- Clone this repository to any location
 
-- Navigate to `root/integratons/create-react-app/`, and execute:
+  ```bash
+  git clone https://github.com/foxitsoftware/create-react-app-foxitpdfsdkweb.git
+  ```
+
+- Copy `license-key.js` to the `./src` folder.
+
+- Navigate to `./create-react-app-foxitpdfsdkweb` folder, and execute:
 
 ```bash
     npm install
-    npm install -S @foxitsoftware/foxit-pdf-sdk-for-web-library 
-    npm install -D copy-webpack-plugin customize-cra react-app-rewired
     npm run start
 ```
+
 Now everything is set up. Open your browser, navigate to <http://localhost:3000/> to launch this application.
 
 ## Integrate Web SDK to react app created by "create-react-app"
@@ -70,12 +73,12 @@ Now everything is set up. Open your browser, navigate to <http://localhost:3000
 
 ### Getting started
 
-1. Create the React app with "create-react-app": 
+1. Create the React app with "create-react-app":
 
    ```bash  
    `npx create-react-app app`
    ```
-   
+
 2. In `app` folder, Update `package.json`:
     ```json
     "scripts": {
@@ -112,7 +115,7 @@ Now everything is set up. Open your browser, navigate to <http://localhost:3000
         )
     )
    ```
-   
+
 4. In `app` folder, add `.eslintignore`:
 
     ```text
