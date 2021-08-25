@@ -42,7 +42,7 @@ Foxit PDF SDK for Web provides a boilerplate project for React app which was cre
 ### Prerequisites
 
 - [Nodejs](https://nodejs.org/en/) and [npm](https://www.npmjs.com)
-- [Foxit PDF SDK for Web](https://developers.foxitsoftware.com/pdf-sdk/Web)
+- [Foxit PDF SDK for Web](https://developers.foxit.com/products/web/)
 
 ### Getting started
 
@@ -73,7 +73,7 @@ If some text in a PDF document requires a specified font to be rendered correctl
 
 - [Nodejs](https://nodejs.org/en/) and [npm](https://www.npmjs.com)
 - [Reac.js created by create-react-app](https://reactjs.org/docs/create-a-new-react-app.html)
-- [Foxit PDF SDK for Web](https://developers.foxitsoftware.com/pdf-sdk/Web)
+- [Foxit PDF SDK for Web](https://developers.foxit.com/products/web/)
 
 ### Getting started
 
@@ -84,6 +84,7 @@ If some text in a PDF document requires a specified font to be rendered correctl
    ```
 
 2. In `app` folder, Update `package.json`:
+
     ```json
     "scripts": {
         "start": "react-app-rewired --max_old_space_size=8192 start",
