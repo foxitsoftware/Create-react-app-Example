@@ -63,6 +63,10 @@ Foxit PDF SDK for Web provides a boilerplate project for React app which was cre
 
 Now everything is set up. Open your browser, navigate to <http://localhost:3000/> to launch this application.
 
+### Reference the fonts
+
+If some text in a PDF document requires a specified font to be rendered correctly, you need to specify a font loading path during initialization. In this example, you can refer to the `fontPath` configuration in `src/preload.js`. What we need to do is to copy the `external` folder in the SDK to the `public` folder so that the special font can be rendered normally.
+
 ## Integrate Web SDK to react app created by "create-react-app"
 
 ### Prerequisites
@@ -133,7 +137,7 @@ Now everything is set up. Open your browser, navigate to <http://localhost:3000
     window.readyWorker = preloadJrWorker({
         workerPath: libPath,
         enginePath: libPath+'/jr-engine/gsdk',
-        fontPath: 'http://webpdf.foxitsoftware.com/webfonts/',
+        fontPath: '/external/broli',
         licenseSN,
         licenseKey,
     });
@@ -145,7 +149,8 @@ Now everything is set up. Open your browser, navigate to <http://localhost:3000
      import './preload.js'
     ```
 
-7. In `src` folder, add `components/PDFViewer/index.js`:
+7. Copy the `external` folder inside SDK to `public` folder.
+8. In `src` folder, add `components/PDFViewer/index.js`:
 
    ```js
     import React from "react";
@@ -185,7 +190,7 @@ Now everything is set up. Open your browser, navigate to <http://localhost:3000
     }
    ```
 
-8. Update `App.js`:
+9. Update `App.js`:
 
     ```js
     import './App.css';
@@ -201,7 +206,7 @@ Now everything is set up. Open your browser, navigate to <http://localhost:3000
     export default App;
     ```
 
-9. Install your `node_modules` and run:
+10. Install your `node_modules` and run:
 
     ```bash
     cd app
@@ -211,4 +216,4 @@ Now everything is set up. Open your browser, navigate to <http://localhost:3000
     npm run start
     ```
 
-10. Now everything is set up. Open your browser, navigate to <http://localhost:3000/> to launch your application.
+11. Now everything is set up. Open your browser, navigate to <http://localhost:3000/> to launch your application.
