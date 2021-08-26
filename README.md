@@ -49,7 +49,7 @@ Foxit PDF SDK for Web provides a boilerplate project for React app which was cre
 - Clone this repository to any location
 
   ```bash
-  git clone https://github.com/foxitsoftware/create-react-app-foxitpdfsdkweb.git
+  git clone https://github.com/foxitsoftware/Create-react-app-Example.git
   ```
 
 - Copy `license-key.js` to the `./src` folder.
