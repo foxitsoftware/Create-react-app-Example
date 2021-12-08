@@ -218,5 +218,8 @@ If some text in a PDF document requires a specified font to be rendered correctl
     npm install -D copy-webpack-plugin customize-cra react-app-rewired
     npm run start
     ```
+    > **NOTE**
+    > If you get this error: `TypeError: compilation.getCache is not a function`
+    > Please refer to: <https://github.com/webpack-contrib/copy-webpack-plugin/issues/575>
 
 11. Now everything is set up. Open your browser, navigate to <http://localhost:3000/> to launch your application.
