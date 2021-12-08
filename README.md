@@ -181,7 +181,6 @@ If some text in a PDF document requires a specified font to be rendered correctl
                     }
                 },
                 renderTo: element,
-                appearance: UIExtension.appearances.adaptive,
                 addons: UIExtension.PDFViewCtrl.DeviceInfo.isMobile ?
                 libPath+'uix-addons/allInOne.mobile.js':
                 libPath+'uix-addons/allInOne.js'
