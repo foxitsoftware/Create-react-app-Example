@@ -32,7 +32,4 @@ export default class PDFViewer extends React.Component {
         });
         window.pdfui = this.pdfui
     }
-    componentWillUnmount() {
-        this.pdfui.destroy();
-    }
 }
