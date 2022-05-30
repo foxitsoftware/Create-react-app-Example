@@ -1,10 +1,17 @@
 import './App.css';
-import PDFViewer from './components/PDFViewer';
-
+import { PDFViewerContext } from './components/PDFViewerContext';
+import { FoxitWebPDFApp } from './components/FoxitWebPDFApp';
+import { PDFViewerRenderer } from './components/PDFViewerRenderer';
 function App() {
   return (
     <div className="App">
-      <PDFViewer></PDFViewer>
+      <FoxitWebPDFApp>
+        <PDFViewerContext.Consumer>
+          {({pdfui, element}) => {
+            return <PDFViewerRenderer pdfui={pdfui} element={element}></PDFViewerRenderer>
+          }}
+        </PDFViewerContext.Consumer>
+      </FoxitWebPDFApp>
     </div>
   );
 }

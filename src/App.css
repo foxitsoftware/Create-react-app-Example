@@ -1,3 +1,4 @@
-#root,.App,.foxit-PDF{
-  height: 100%;
+.App {
+  width: 100vw;
+  height: 100vh;
 }
