@@ -15,10 +15,8 @@ if (module.hot) {
 class FoxitWebPDFAppComponent extends React.PureComponent {
     constructor(props) {
         super(props);
-        this.ref = React.createRef();
-
         this.state = {
-            elementRef: this.ref
+            elementRef: React.createRef()
         };
     }
     componentDidMount() {
