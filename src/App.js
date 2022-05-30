@@ -1,16 +1,23 @@
 import './App.css';
-import { PDFViewerContext } from './components/foxit-web-pdf-app/PDFViewerContext';
-import { FoxitWebPDFApp } from './components/foxit-web-pdf-app/FoxitWebPDFApp';
-import { PDFViewerRenderer } from './components/foxit-web-pdf-app/PDFViewerRenderer';
+import { PDFUIInstanceContext } from './components/FoxitWebPDFContexts';
+import { FoxitWebPDFApp } from './components/FoxitWebPDFApp';
+import { PDFViewerRenderer } from './components/PDFViewerRenderer';
+
 function App() {
   return (
     <div className="App">
       <FoxitWebPDFApp>
-        <PDFViewerContext.Consumer>
-          {({pdfui, element}) => {
-            return <PDFViewerRenderer pdfui={pdfui} element={element}></PDFViewerRenderer>
+        <PDFViewerRenderer />
+        <PDFUIInstanceContext.Consumer>
+          {(pdfui) => {
+            return <></>;
           }}
-        </PDFViewerContext.Consumer>
+        </PDFUIInstanceContext.Consumer>
+        <PDFUIInstanceContext.Consumer>
+          {(pdfui) => {
+            return <></>;
+          }}
+        </PDFUIInstanceContext.Consumer>
       </FoxitWebPDFApp>
     </div>
   );
