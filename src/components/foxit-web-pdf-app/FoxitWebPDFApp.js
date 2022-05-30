@@ -4,7 +4,7 @@ import * as UIExtension from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/U
 import "@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/UIExtension.css";
 import * as Addons from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/allInOne.js';
 import * as mobileAddons from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/allInOne.mobile.js';
-import { licenseKey, licenseSN } from '../license-key';
+import { licenseKey, licenseSN } from '../../license-key';
 
 let _pdfui;
 const IS_DEVELOPMENT_ENV =  process.env.NODE_ENV === 'development';
