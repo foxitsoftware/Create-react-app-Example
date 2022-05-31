@@ -12,15 +12,17 @@ if (module.hot) {
     });
 }
 
-class FoxitWebPDFAppComponent extends React.PureComponent {
+class FoxitWebPDFAppComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            elementRef: React.createRef()
+            containerRef: React.createRef()
         };
     }
     componentDidMount() {
         const libPath = "/foxit-lib/";
+        const renderToElement = document.createElement('div');
+        renderToElement.id = 'pdf-ui';
         const pdfui = new UIExtension.PDFUI({
             viewerOptions: {
                 libPath,
@@ -32,17 +34,16 @@ class FoxitWebPDFAppComponent extends React.PureComponent {
                     licenseKey,
                 }
             },
-            renderTo: this.state.elementRef.current,
+            renderTo: renderToElement,
             addons: UIExtension.PDFViewCtrl.DeviceInfo.isMobile ? mobileAddons : Addons
         });
         this.setState({
-            elementRef: this.ref,
             pdfui
         });
     }
     render() {
         return (
-            <PDFUIRenderToElementContext.Provider value={this.state.elementRef}>
+            <PDFUIRenderToElementContext.Provider value={this.state.containerRef}>
                 {
                     this.state.pdfui
                         ? (
@@ -55,8 +56,18 @@ class FoxitWebPDFAppComponent extends React.PureComponent {
             </PDFUIRenderToElementContext.Provider>
         );
     }
+    componentDidUpdate(){
+        const pdfui = this.state.pdfui;
+        const container = this.state.containerRef.current;
+        if(pdfui && container) {
+            pdfui.renderTo.remove();
+            container.appendChild(pdfui.renderTo);
+        }
+    }
     componentWillUnmount() {
-        this.state.pdfui.destroy();
+        if(this.state.pdfui) {
+            this.state.pdfui.destroy();
+        }
     }
 }
 export const FoxitWebPDFApp = React.memo(FoxitWebPDFAppComponent);
