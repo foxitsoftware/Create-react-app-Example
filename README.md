@@ -25,8 +25,7 @@ Foxit PDF SDK for Web provides a boilerplate project for React app which was cre
 │  ├─App.js
 │  ├─index.css
 │  ├─index.js
-│  ├─license-key.js
-│  └──preload.js
+│  └──license-key.js
 ├─.eslintignore
 ├─config-overrides.js
 ├─package.json
@@ -40,7 +39,6 @@ Foxit PDF SDK for Web provides a boilerplate project for React app which was cre
 | src/components/FoxitWebPDFApp.js      | Initialize FoxitPDFSDK for Web and share pdfui instance through `React Context`.                                                                                                                                                                                                                |
 | src/components/FoxitWebPDFContexts.js | Contains `PDFUIInstanceContext` and `PDFUIRenderToElementContext`. Subcomponents can obtain a `pdfui` instance via `PDFUIInstanceContext.Consumer`, and `PDFUIRenderToElementContext` is used in `PDFViewerRenderer.js` to provide a React ref to the `FoxitWebPDFApp` component to render PDF. |
 | src/components/PDFViewerRenderer.js   | Provides an entry point for the application layer to flexibly specify where to render the PDF                                                                                                                                                                                                   |
-| src/preload.js                        | This entry point used to preload SDK core assets.                                                                                                                                                                                                                                               |
 | src/license-key.js                    | The license-key                                                                                                                                                                                                                                                                                 |
 | src/App.js                            | The entry point for application.                                                                                                                                                                                                                                                                |
 | config-overrides.js                   | Adjust the Webpack configuration                                                                                                                                                                                                                                                                |
@@ -75,7 +73,7 @@ Now everything is set up. Open your browser, navigate to <http://localhost:3000/
 ### Reference the fonts
 
 If some text in a PDF document requires a specific font to render correctly, you need to specify a font loading path
-during initialization. In this example, you can refer to the `fontPath` configuration in `src/preload.js`. What we need
+during initialization. In this example, you can refer to the `fontPath` configuration in `src/components/FoxitWebPDFApp.js`. What we need
 to do is to copy the `external` folder in the SDK to the `public` folder so that the special font can be rendered
 normally.
 
