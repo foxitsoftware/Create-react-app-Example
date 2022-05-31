@@ -110,7 +110,7 @@ normally.
 
     This step avoids `'JavaScript heap out of memory'` errors during the build process.
 
-4. In `app` folder, add `config-overrides.js`:
+3. In `app` folder, add `config-overrides.js`:
    ```js
     const CopyWebpackPlugin = require("copy-webpack-plugin");
     const { override, addWebpackPlugin, addWebpackExternals} = require('customize-cra');
@@ -136,8 +136,8 @@ normally.
     )
    ```
 
-6. Copy the `external` folder inside SDK to `public` folder.
-7. Copy these files to your `src` folder:
+4. Copy the `external` folder inside SDK to `public` folder.
+5. Copy these files to your `src` folder:
    ```txt
    src/component/FoxitWebPDFApp.js
    src/component/FoxitWebPDFContexts.js
@@ -146,7 +146,7 @@ normally.
    ```
    Of course, in order to ensure that the project structure is not disrupted, you can create another directory to store them.
 
-8. Add the following code into your component(Please remember to import them):
+6. Add the following code into your component(Please remember to import them):
     ```js
     <FoxitWebPDFApp>
         <PDFViewerRenderer />
@@ -164,14 +164,19 @@ normally.
     ```
    For detailed usage, please refer to `src/App.js`
 
-9. Update the container size and ensure it is displayed correctly, you can refer to `src/App.css`:
+7. Update the container size and ensure it is displayed correctly, you can refer to `src/App.css`:
     ```css
    .App {
         width: 100vw;
         height: 100vh;
    }
    ```
-10. Install your dependencies and run:
+8. Add `license-key.js` to the `.eslintignore` file:
+    ```text
+    license-key.js
+    ```
+
+9. Install your dependencies and run:
     ```bash
     cd app
     npm install
@@ -183,4 +188,4 @@ normally.
     > If you get this error: `TypeError: compilation.getCache is not a function`
     > Please refer to: <https://github.com/webpack-contrib/copy-webpack-plugin/issues/575>
 
-11. Now everything is set up. Open your browser, navigate to <http://localhost:3000/> to launch your application.
+10. Now everything is set up. Open your browser, navigate to <http://localhost:3000/> to launch your application.
