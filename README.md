@@ -46,7 +46,7 @@ Foxit PDF SDK for Web provides a boilerplate project for React app which was cre
 
 ### Prerequisites
 
-- [Nodejs](https://nodejs.org/en/) and [npm](https://www.npmjs.com)
+- [Nodejs](https://nodejs.org/en/) and [npm](https://www.npmjs.com) ( Node >= 14.0.0 and npm >= 5.6 )
 - [Foxit PDF SDK for Web](https://developers.foxit.com/products/web/)
 
 ### Getting started
@@ -81,7 +81,7 @@ normally.
 
 ### Prerequisites
 
-- [Nodejs](https://nodejs.org/en/) and [npm](https://www.npmjs.com)
+- [Nodejs](https://nodejs.org/en/) and [npm](https://www.npmjs.com)  ( Node >= 14.0.0 and npm >= 5.6 )
 - [React.js created by create-react-app](https://reactjs.org/docs/create-a-new-react-app.html)
 - [Foxit PDF SDK for Web](https://developers.foxit.com/products/web/)
 
