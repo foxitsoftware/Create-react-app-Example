@@ -186,4 +186,16 @@ normally.
     > If you get this error: `TypeError: compilation.getCache is not a function`
     > Please refer to: <https://github.com/webpack-contrib/copy-webpack-plugin/issues/575>
 
-10. Now everything is set up. Open your browser, navigate to <http://localhost:3000/> to launch your application.
+10. Remove the Strict mode in `src/index.js`:
+    ```diff
+    // ...
+    ReactDOM.render(
+    -     <React.StrictMode>
+            <App />
+    -     </React.StrictMode>,
+        document.getElementById('root')
+    );
+    // ...
+    ```
+
+11. Now everything is set up. Open your browser, navigate to <http://localhost:3000/> to launch your application.
