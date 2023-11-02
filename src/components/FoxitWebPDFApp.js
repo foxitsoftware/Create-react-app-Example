@@ -40,6 +40,10 @@ class FoxitWebPDFAppComponent extends React.Component {
         this.setState({
             pdfui
         });
+
+        window.addEventListener('resize', this.resize = () => {
+            pdfui.redraw();
+        });
     }
     render() {
         return (
@@ -67,6 +71,8 @@ class FoxitWebPDFAppComponent extends React.Component {
     componentWillUnmount() {
         if(this.state.pdfui) {
             this.state.pdfui.destroy();
+
+            window.removeEventListener('resize', this.resize);
         }
     }
 }
