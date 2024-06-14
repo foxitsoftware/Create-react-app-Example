@@ -32,6 +32,11 @@ class FoxitWebPDFAppComponent extends React.Component {
                     fontPath: '/external/brotli',
                     licenseSN,
                     licenseKey,
+                },
+                messageSyncServiceWorker: {
+                  options:{
+                      scope: libPath
+                  }
                 }
             },
             renderTo: renderToElement,
