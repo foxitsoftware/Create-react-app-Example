@@ -29,14 +29,9 @@ class FoxitWebPDFAppComponent extends React.Component {
                 jr: {
                     workerPath: libPath,
                     enginePath: libPath + '/jr-engine/gsdk',
-                    fontPath: '/external/brotli',
+                    fontPath: 'http://webpdf.foxitsoftware.com/webfonts/',
                     licenseSN,
                     licenseKey,
-                },
-                messageSyncServiceWorker: {
-                  options:{
-                      scope: libPath
-                  }
                 }
             },
             renderTo: renderToElement,
