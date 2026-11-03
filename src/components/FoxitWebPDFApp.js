@@ -37,6 +37,7 @@ class FoxitWebPDFAppComponent extends React.Component {
             renderTo: renderToElement,
             addons: UIExtension.PDFViewCtrl.DeviceInfo.isMobile ? mobileAddons : Addons
         });
+        window.pdfui = pdfui;
         this.setState({
             pdfui
         });
@@ -71,6 +72,7 @@ class FoxitWebPDFAppComponent extends React.Component {
     componentWillUnmount() {
         if(this.state.pdfui) {
             this.state.pdfui.destroy();
+            window.pdfui = null;
 
             window.removeEventListener('resize', this.resize);
         }
